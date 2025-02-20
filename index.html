@@ -13,6 +13,27 @@
         <path d="M0,10 h20 M0,20 h20 M20,0 v20 M10,0 v20" stroke="black" stroke-width=".2"/>
         <circle cx="20" cy="20" r="1" fill="red" />
       </pattern>
+      
+      <pattern id="patternPeriod" width="0.2" height="0.2">
+        <circle cx="2" cy="2" r=".4" fill="black" />
+      </pattern>
+
+      <symbol id="symbolPatternPeriod" viewBox="0 0 200 200">
+        <rect x="0" y="0" width="20" height="20" fill="url(#patternPeriod)" transform="rotate(45, 10, 10)"/>
+      </symbol>
+      <symbol id="symbolCross" viewBox="0 0 200 200">
+        <path d="M0,5 l10,0 M5,0 l0,10" stroke="black" stroke-width="3"/>
+      </symbol>
+      <symbol id="symbolStar" viewBox="0 0 200 200">
+        <polygon points="10,10 13,2 16,10 26,10 20,16 23,26 13,20 3,26 7,16 0,10" />
+      </symbol>
+      <symbol id="symbolCurvyLine" viewBox="0 0 200 200">
+        <path d="
+        M0,10 c0,-6 10,-6 10,0 c0,6 10,6 10,0 
+        c0,-6 10,-6 10,0 c0,6 10,6 10,0 c0,-6 10,-6 10,0 
+        c0,6 10,6 10,0 c0,-6 10,-6 10,0 c0,6 10,6 10,0 
+        c0,-6 10,-6 10,0 c0,6 10,6 10,0 c0,-6 10,-6 10,2" fill="none" stroke="black" stroke-width="1.5"/>
+      </symbol>
 
       <marker id="bluntArrow" markerWidth="200" markerHeight="10" refX="1" refY="5" orient="auto">
         <g stroke="black" fill="#d4dbdb">
@@ -41,6 +62,43 @@
     </defs>
     <rect fill="url(#backgroundLayout)" width="100%" stroke="black" stroke-width=".2" height="100%" />
     
+ 
+    <g id="curvyLine">
+      <path d="M30,60 c-15,-1 -15,15 0,13 c12,-1 12,8 0,8 c-5,0 -5,8 0,10 c0,1 15,-1 13,2" stroke="black" fill="none" />
+      <use x="100"y="35"  width="150" href="#symbolCurvyLine" />
+      <use x="15"y="73"  width="150" href="#symbolCurvyLine" />
+    </g>
+    <g id="star">
+      <use x="60" y="-15" width="120" href="#symbolStar" fill="lightblue" />
+      <use x="70" y="-25" width="50" href="#symbolStar" fill="lightgreen" />
+      <use x="13" y="32" width="98" href="#symbolStar" fill="purple" />
+      <use x="39" y="66" width="60" href="#symbolStar" fill="purple" />
+    </g>
+    <g id="period">
+      <!-- Bulb -->
+      <path d="M130,30 l10,10 15,-15" fill="none" stroke-width="8" stroke="red"/>
+      <use x="140" y="30"  href="#symbolPatternPeriod" />
+      <use x="128" y="25" width="200" height="180" href="#symbolPatternPeriod" />
+      <use x="128" y="20" width="200" height="180" href="#symbolPatternPeriod" />
+      <use x="60" y="20" width="200" height="180" href="#symbolPatternPeriod" />
+      <use x="55" y="18" width="200" height="180" href="#symbolPatternPeriod" />
+      <!-- Cup -->
+      <use x="10" y="83" width="200" height="180" href="#symbolPatternPeriod" />
+      <use x="20" y="83" width="200" height="180" href="#symbolPatternPeriod" />
+      <use x="30" y="83" width="200" height="180" href="#symbolPatternPeriod" />
+      <use x="40" y="83" width="200" height="180" href="#symbolPatternPeriod" />
+      <use x="5" y="120" width="200" height="180" href="#symbolPatternPeriod" />
+      <use x="8" y="115" width="200" height="180" href="#symbolPatternPeriod" />
+    </g>
+    <g id="cup">
+      <!-- Cup hand -->
+      <ellipse cx="65" cy="110" rx="13" ry="12" fill="#050e22;" />
+      <ellipse cx="65" cy="110" rx="8" ry="11" fill="lightblue" />
+      <circle cx="65" cy="110" r="5" fill="white" />
+      <!-- Inside Cup -->
+      <path d="M15,95 l50,0 c0,0 5,30 -15,30 l-20,0 c-17,-3 -15,-10 -16,-30" fill="#050e22;" />
+      <path d="M16,96 l40,0 c0,-5 3,25 -5,28 l-20,0 c-17,-3 -15,-10 -16,-28" fill="lightblue" />
+    </g>
     <g id="bulb">
       <path id="bigBulb" d="M92.5,64 c-20,-10 -20,-42 12.5,-42 c20,1 30,35 5.5,42 l0,5 l-18,0 z"  stroke="black" fill="orange"/>
       <path id="bigCurve" d="M87,58 c-21,-35 25,-42 30,-25 c-12,-15 -45,0 -30,25" fill="#d4dbdb"/>
@@ -49,6 +107,12 @@
       <path id="smalBulbCapCurve" d="M101,85 c5,2 7,8 -15,10" fill="none" stroke="black" />
       <path id="smalBulbCap" d="M98,80 a1,1.4 1 1 0 8,0" fill="lightblue" stroke="black" />
       <path id="bulbCap" d="M92.5,69 a1,1.4 1 1 0 18,0 M91,73 l20,0 M93,78 l16.5,0" stroke="black" fill="green" />
+    </g>
+    <g id="cross">
+      <use x="130" y="50" href="#symbolCross" />
+      <use x="23" y="0" width="100" href="#symbolCross" />
+      <use x="63" y="36" width="100" href="#symbolCross" />
+      <use x="22" y="128" width="170" href="#symbolCross" />
     </g>
     <g id="ruler">
       <rect rx="2" ry="2" x="33" y="30" width="192" height="16" transform="translate(12,-4), rotate(44, 25, 20)" />
@@ -62,7 +126,7 @@
 
   </svg>
 
-  <div style="background-color: #d4dbdb;">
+  <div style="background-color: #050e22;">
     text
   </div>
 </body>
