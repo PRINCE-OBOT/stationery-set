@@ -7,7 +7,7 @@
 </head>
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-    <!-- <image width="200" href="./tool.jpg" /> -->
+    <image width="200" href="./tool.jpg" />
     <defs>
       <!-- Pattern -->
       <pattern id="backgroundLayout" width="0.1" height="0.1">
@@ -65,18 +65,26 @@
         <path d="M105,11 l80,0" stroke="orange" stroke-width="8" />
         <path d="M110,8 l80,0" marker-end="url(#ruleLine)" />
       <marker/>
+
+      <!-- Linear -->
+       <linearGradient id="linear" x1="0%" y1="50%">
+        <stop offSet="0%" stop-color="#7a4db5" />
+        <stop offSet="65%" stop-color="#7a4db5" />
+        <stop offSet="65%" stop-color="#000" />
+       </linearGradient>
     </defs>
     <rect fill="url(#backgroundLayout)" width="100%" stroke="black" stroke-width=".2" height="100%" />
     
     <g id="Curvline">
       <!-- cup1 -->
       <path d="M30,60 c-15,-1 -15,15 0,13 c12,-1 12,8 0,8 c-5,0 -5,8 0,10 c0,1 15,-1 13,2" stroke="black" fill="none" />
-      <!-- Cup -->
-      <use x="15"y="73"  width="150" href="#symbolCurvyLine" />
+      <!-- Cup and Time-->
+      <use x="55"y="73"  width="150" href="#symbolCurvyLine" />
       <!-- Bulb -->
       <use x="100"y="35"  width="150" href="#symbolCurvyLine" />
       <!-- cards -->
       <use x="25"y="145"  width="150" href="#symbolCurvyLine" />
+      <use x="100"y="145"  width="150" href="#symbolCurvyLine" transform="translate(-30, 40), rotate(-90, 100, 145)"/>
     </g>
     <!-- Star -->
     <g>
@@ -84,28 +92,38 @@
       <use x="70" y="-25" width="50" href="#symbolStar" fill="lightgreen" />
       <use x="13" y="32" width="98" href="#symbolStar" fill="purple" />
       <use x="39" y="66" width="60" href="#symbolStar" fill="purple" />
+      <use x="173" y="0" width="60" href="#symbolStar" fill="green" />
     </g>
     <g id="Period">
       <!-- Bulb -->
       <path d="M130,30 l10,10 15,-15" fill="none" stroke-width="8" stroke="red"/>
       <use x="140" y="30"  href="#symbolPatternPeriod" />
-      <use x="128" y="25" width="200" height="180" href="#symbolPatternPeriod" />
-      <use x="128" y="20" width="200" height="180" href="#symbolPatternPeriod" />
-      <use x="60" y="20" width="200" height="180" href="#symbolPatternPeriod" />
-      <use x="55" y="18" width="200" height="180" href="#symbolPatternPeriod" />
+      <use x="128" y="25" height="180" href="#symbolPatternPeriod" />
+      <use x="128" y="20" height="180" href="#symbolPatternPeriod" />
+      <use x="60" y="20" height="180" href="#symbolPatternPeriod" />
+      <use x="55" y="18" height="180" href="#symbolPatternPeriod" />
       <!-- Cup -->
-      <use x="10" y="83" width="200" height="180" href="#symbolPatternPeriod" />
-      <use x="20" y="83" width="200" height="180" href="#symbolPatternPeriod" />
-      <use x="30" y="83" width="200" height="180" href="#symbolPatternPeriod" />
-      <use x="40" y="83" width="200" height="180" href="#symbolPatternPeriod" />
-      <use x="5" y="120" width="200" height="180" href="#symbolPatternPeriod" />
-      <use x="8" y="115" width="200" height="180" href="#symbolPatternPeriod" />
+      <use x="10" y="83" height="180" href="#symbolPatternPeriod" />
+      <use x="20" y="83" height="180" href="#symbolPatternPeriod" />
+      <use x="30" y="83" height="180" href="#symbolPatternPeriod" />
+      <use x="40" y="83" height="180" href="#symbolPatternPeriod" />
+      <use x="5" y="120" height="180" href="#symbolPatternPeriod" />
+      <use x="8" y="115" height="180" href="#symbolPatternPeriod" />
       <!-- Cards -->
-      <use x="60" y="160" width="200" height="180" href="#symbolPatternPeriod" />
-      <use x="65" y="162" width="200" height="180" href="#symbolPatternPeriod" />
-      <use x="68" y="165" width="200" height="180" href="#symbolPatternPeriod" />
+      <use x="60" y="160" height="180" href="#symbolPatternPeriod" />
+      <use x="65" y="162" height="180" href="#symbolPatternPeriod" />
+      <use x="68" y="165" height="180" href="#symbolPatternPeriod" />
+      <!-- Time -->
+      <use x="100" y="95" height="180" href="#symbolPatternPeriod" />
+      <use x="110" y="95" height="180" href="#symbolPatternPeriod" />
+      <use x="110" y="110" height="180" href="#symbolPatternPeriod" />
+      <use x="110" y="90" height="180" href="#symbolPatternPeriod" />
+      <use x="111" y="81" height="180" href="#symbolPatternPeriod" />
+      <use x="115" y="87" height="180" href="#symbolPatternPeriod" />
+      <use x="155" y="125" height="180" href="#symbolPatternPeriod" />
+      <use x="160" y="125" height="180" href="#symbolPatternPeriod" />
     </g>
-    <g>
+    <g id="Cup">
       <!-- Cup hand -->
       <ellipse cx="65" cy="110" rx="13" ry="12" fill="#050e22;" />
       <ellipse cx="65" cy="110" rx="8" ry="11" fill="lightblue" />
@@ -115,7 +133,7 @@
       <path d="M16,96 l40,0 c0,-5 3,25 -5,28 l-20,0 c-17,-3 -15,-10 -16,-28" fill="lightblue" />
     </g>
     <!-- bulb -->
-    <g id="bulb">
+    <g>
       <path id="bigBulb" d="M92.5,64 c-20,-10 -20,-42 12.5,-42 c20,1 30,35 5.5,42 l0,5 l-18,0 z"  stroke="black" fill="orange"/>
       <path id="bigCurve" d="M87,58 c-21,-35 25,-42 30,-25 c-12,-15 -45,0 -30,25" fill="#d4dbdb"/>
       <path id="smallCurve" d="M112,58 c14,0 12,-15 7,-20 c2,8 4,12 -7,20" fill="black"/>
@@ -131,6 +149,7 @@
       <use x="63" y="36" width="100" href="#symbolCross" />
       <use x="22" y="128" width="170" href="#symbolCross" />
       <use x="147" y="133" width="120" href="#symbolCross" />
+      <use x="162" y="104" width="120" href="#symbolCross" />
     </g>
     <!-- ruler -->
     <g>
@@ -158,9 +177,26 @@
       <path d="M58,166 c5,2 7,10 0,13 c0,0 7,-6 0,-13" fill="orange"  />
       <circle cx="50" cy="170" fill="white" r="4" fill-opacity="0.8" /> 
     </g>
+    <!-- Time -->
+    <g>
+      <circle cx="161" cy="85" r="11" fill="url(#linear)" stroke="black"/>
+      <circle cx="161" cy="85" r="8" fill="white" stroke="black" />
+      <rect x="153" y="85" rx="6" width="16" height="15" />
+      <path d="M157,87 a1,1 1 1 0 12,0" stroke="#7a4db5" fill="#7a4db5" transform="translate(0,-2), rotate(90, 158, 89)" />
+      <path d="M157,87 a1,1 1 1 0 2,0" fill="white" fill-opacity="0.7" transform="translate(-1,1), rotate(30, 158, 89)" />
+      <circle cx="161" cy="115" r="24" fill="#7a4db5" stroke="black" />
+      <circle cx="161" cy="115" r="16" fill="white" stroke="black" />
+      <circle cx="161" cy="115" r="14" fill="black" stroke="black" />
+      <circle cx="161" cy="115" r="10" fill="white" stroke="black" />
+      <path d="M145,130 c-10,-10 -9,-30 8,-35 c-10,10 -15,20 -8,35" fill="white" stroke="white" />
+      <path d="M170,135 c15,-10 15,-20 8,-33 c5,10 0,25 -8,33" stroke="black" />
+      <path d="M147,115 a1,1 1 1 0 28,0" fill="white" stroke="black" transform="rotate(150, 161, 115)"/>
+      <path d="M147,115 a1,.8 1 1 1 28,0" fill="white" stroke="black" transform="rotate(150, 161, 115)"/>
+      <path d="M161,103 l0,14 l9,-7" fill="none" stroke="black" />
+    </g>
   </svg>
 
-  <div style="background-color: #050e22;">
+  <div style="background-color: #7a4db5;">
     text
   </div>
 </body>
