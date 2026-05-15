@@ -1,6 +1,6 @@
 # Stationery Set
 
-A stationery set SVG project to solidify what I learnt from [The Odin Project SVG lesson]().
+A stationery set SVG project to solidify what I learnt from [The Odin Project SVG lesson](https://www.theodinproject.com/lessons/node-path-intermediate-html-and-css-svg).
 
 ---
 
@@ -25,4 +25,4 @@ A stationery set SVG project to solidify what I learnt from [The Odin Project SV
 
 ## Challenges
 
-Adding shadow in pencil
+Adding shadow to stationery set
